@@ -8,7 +8,7 @@
 public class RPSDriver
 {
     public static void main(String[] args) {
-        Game myRPS = new RPSGame();
+        Game myRPS = new RPSGame();  //Game is an interface RPSGame is a class
         
         myRPS.setPlayers();
         Player pOne = myRPS.getP1();
@@ -28,7 +28,5 @@ public class RPSDriver
         System.out.println();
         System.out.println("Thank you for playing.  The final score is: \n" + pOne.getName() + ":\t" + pOne.getScore());
         System.out.println(pTwo.getName()+ ": \t" + pTwo.getScore());
-        
-        
     }
 }

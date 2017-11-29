@@ -6,7 +6,6 @@ public class RPSGame implements Game
     public Player pTwo;
     int numPlayers;
    
-
     /**
      * Constructor for objects of class RPS
      */
@@ -14,7 +13,6 @@ public class RPSGame implements Game
     {
         // initialise instance variables
         numPlayers = determineNumberPlayers();
-
     }
     
     public Player getP1() {
@@ -24,7 +22,6 @@ public class RPSGame implements Game
     public Player getP2() {
         return pTwo;
     }
-    
     
     public void setPlayers() {
         
@@ -42,7 +39,8 @@ public class RPSGame implements Game
      * Returns 1 or 2 based on how many players are playing RPS
      */
     public int determineNumberPlayers() {
-        return 0;
+        System.out.println("How many players? (1 or 2)");
+        return scan.nextInt();
     }
     
     /**
@@ -76,15 +74,20 @@ public class RPSGame implements Game
      * Update score based on who wins. Winner will be 1 for player 1 win, 0 for tie and -1 for player 2 win
      */
     public void updateScore(int winner) {
-       
+       if (winner == 1){
+           pOne.updateScore(1);
+        }
+        else if (winner == -1) {
+            pTwo.updateScore(1);
+        }
     }
     
     /**
      * Ask to continue and return true for yes
      */
     public boolean continueGame() {
-        
-        return false;
+        System.out.println("Would you like to continue playing? (y/n)");
+        String answer = scan.next();
+        return scan.next().equals("y");
     }
-
 }
